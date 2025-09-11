@@ -8,21 +8,17 @@ workflows:
     jobs:
       - docker/publish:
           image: kilinco/udagram-api-feed
-          dockerfile: udagram-api-feed/Dockerfile
           path: ./udagram-api-feed
           tag: <<pipeline.git.revision>>
       - docker/publish:
           image: kilinco/udagram-api-user
-          dockerfile: udagram-api-user/Dockerfile
           path: ./udagram-api-user
           tag: <<pipeline.git.revision>>
       - docker/publish:
           image: kilinco/udagram-frontend
-          dockerfile: udagram-frontend/Dockerfile
           path: ./udagram-frontend
           tag: <<pipeline.git.revision>>
       - docker/publish:
           image: kilinco/reverseproxy
-          dockerfile: udagram-reverseproxy/Dockerfile
           path: ./udagram-reverseproxy
           tag: <<pipeline.git.revision>>

@@ -1,5 +1,7 @@
 FROM node:18.17.0-alpine
 
+RUN ls -la
+
 ## Create app directory
 WORKDIR /usr/src/app
 
