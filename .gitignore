@@ -43,4 +43,3 @@ venv/
 !.elasticbeanstalk/*.global.yml
 set_env.sh
 s3_policy.json
-s3_policy.json
