@@ -10,16 +10,20 @@ workflows:
           image: kilinco/udagram-api-feed
           path: ./udagram-api-feed
           tag: <<pipeline.git.revision>>
+          docker_context: ./udagram-api-feed
           extra_build_args: '--no-cache --progress=plain'
       - docker/publish:
           image: kilinco/udagram-api-user
           path: ./udagram-api-user
+          docker_context: ./udagram-api-user
           tag: <<pipeline.git.revision>>
       - docker/publish:
           image: kilinco/udagram-frontend
           path: ./udagram-frontend
+          docker_context: ./udagram-frontend
           tag: <<pipeline.git.revision>>
       - docker/publish:
           image: kilinco/reverseproxy
           path: ./udagram-reverseproxy
+          docker_context: ./udagram-reverseproxy
           tag: <<pipeline.git.revision>>
