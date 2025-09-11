@@ -10,6 +10,7 @@ workflows:
           image: kilinco/udagram-api-feed
           path: ./udagram-api-feed
           tag: <<pipeline.git.revision>>
+          extra_build_args: '--no-cache --progress=plain'
       - docker/publish:
           image: kilinco/udagram-api-user
           path: ./udagram-api-user
