@@ -7,7 +7,7 @@ import {IndexRouter} from './controllers/v0/index.router';
 import bodyParser from 'body-parser';
 import {config} from './config/config';
 import {V0_FEED_MODELS} from './controllers/v0/model.index';
-
+import { v4 as uuidv4 } from 'uuid';
 
 (async () => {
   await sequelize.addModels(V0_FEED_MODELS);
@@ -19,6 +19,20 @@ import {V0_FEED_MODELS} from './controllers/v0/model.index';
   const port = process.env.PORT || 8080;
 
   app.use(bodyParser.json());
+
+  app.use((req, res, next) => {
+    const id = uuidv4();
+    const startTime = new Date();
+    console.log(`[${id}] Request received: ${req.method} ${req.url} at ${startTime.toISOString()}`);
+  
+    res.on('finish', () => {
+      const endTime = new Date();
+      const duration = endTime.getTime() - startTime.getTime();
+      console.log(`[${id}] Response sent for: ${req.method} ${req.url} at ${endTime.toISOString()} (${duration}ms)`);
+    });
+  
+    next();
+  });
 
   // We set the CORS origin to * so that we don't need to
   // worry about the complexities of CORS this lesson. It's

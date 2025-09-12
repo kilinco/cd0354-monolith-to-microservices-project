@@ -16,13 +16,13 @@
   "author": "Gabriel Ruttner",
   "license": "ISC",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.511.0",
+    "@aws-sdk/credential-providers": "^3.511.0",
+    "@aws-sdk/s3-request-presigner": "^3.511.0",
     "@eslint/config-array": "^0.19.2",
     "@eslint/object-schema": "^2.1.6",
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.5",
-    "@aws-sdk/client-s3": "^3.511.0",
-    "@aws-sdk/s3-request-presigner": "^3.511.0",
-    "@aws-sdk/credential-providers": "^3.511.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
@@ -36,7 +36,8 @@
     "rimraf": "^6.0.1",
     "sequelize": "^6.37.1",
     "sequelize-typescript": "^2.1.6",
-    "superagent": "^10.1.1"
+    "superagent": "^10.1.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.42",
@@ -44,6 +45,7 @@
     "@types/express": "^4.17.21",
     "@types/node": "^20.11.24",
     "@types/sequelize": "^4.28.20",
+    "@types/uuid": "^8.3.0",
     "@types/validator": "^13.11.9",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
