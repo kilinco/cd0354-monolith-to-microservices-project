@@ -5,7 +5,6 @@ metadata:
     app: udagram-api-user
   name: udagram-api-user-svc
   namespace: default
-  selfLink: /api/v1/namespaces/default/services/udagram-api-user-svc
 spec:
   ports:
   - port: 8080
