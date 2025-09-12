@@ -11,19 +11,26 @@ workflows:
           path: ./udagram-api-feed
           tag: <<pipeline.git.revision>>
           docker_context: ./udagram-api-feed
-          # extra_build_args: '--no-cache --progress=plain'
+          extra_build_args: '--platform=linux/amd64'
+          use_buildkit: true
       - docker/publish:
           image: kilinco/udagram-api-user
           path: ./udagram-api-user
           docker_context: ./udagram-api-user
           tag: <<pipeline.git.revision>>
+          extra_build_args: '--platform=linux/amd64'
+          use_buildkit: true
       - docker/publish:
           image: kilinco/udagram-frontend
           path: ./udagram-frontend
           docker_context: ./udagram-frontend
           tag: <<pipeline.git.revision>>
+          extra_build_args: '--platform=linux/amd64'
+          use_buildkit: true
       - docker/publish:
           image: kilinco/reverseproxy
           path: ./udagram-reverseproxy
           docker_context: ./udagram-reverseproxy
           tag: <<pipeline.git.revision>>
+          extra_build_args: '--platform=linux/amd64'
+          use_buildkit: true
