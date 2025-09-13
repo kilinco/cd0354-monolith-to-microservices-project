@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+data:
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: postgres.cdni7asvbsxe.us-west-2.rds.amazonaws.com
+  AWS_REGION: us-west-2
+  AWS_BUCKET: test-056805471142-dev
+  URL: http://localhost:8100

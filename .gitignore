@@ -46,6 +46,6 @@ s3_policy.json
 udagram-cluster.yaml
 eks-cluster-role-trust-policy.json
 node-role-trust-relationship.json
-env-secret.yaml
-aws-secret.yaml
-env-configmap.yaml
+# env-secret.yaml
+# aws-secret.yaml
+# env-configmap.yaml
