@@ -7,12 +7,10 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 8080
-    protocol: TCP
-    targetPort: 8080
+    - name: "8100" 
+      port: 8100
+      targetPort: 80
   selector:
     app: udagram-frontend
   sessionAffinity: None
   type: ClusterIP
-status:
-  loadBalancer: {}
