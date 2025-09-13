@@ -27,12 +27,6 @@ spec:
             name: env-configmap
         - secretRef:
             name: env-secret
-        volumeMounts:
-        - name: aws-secret
-          mountPath: "/root/.aws/"
-          readOnly: true
-      volumes:
-      - name: aws-secret
-        secret:
-          secretName: aws-secret
+        - secretRef:
+            name: aws-secret
       restartPolicy: Always
